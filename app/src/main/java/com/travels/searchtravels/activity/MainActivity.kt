@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
+import androidx.annotation.VisibleForTesting
 import androidx.core.app.ActivityCompat
 import com.dynamitechetan.flowinggradient.FlowingGradientClass
 import com.google.android.gms.auth.GoogleAuthUtil
@@ -243,29 +244,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadByCategory(category: String) {
-        var city = "Rimini"
-        var cityRu = "Римини"
+    @VisibleForTesting
+    fun loadByCategory(category: String) {
+        var city = "City name"
+        var cityRu = "Название города"
         when(category){
             "sea" -> {
-                city = "Rimini"
-                cityRu = "Римини"
-            }
-            "ocean" -> {
-                city = "Rimini"
-                cityRu = "Римини"
-            }
-            "beach" -> {
-                city = "Rimini"
-                cityRu = "Римини"
+                city = "Yalta"
+                cityRu = "Ялта"
             }
             "mountain" -> {
                 city = "Sochi"
                 cityRu = "Сочи"
             }
+            "ocean" -> {
+                city = "Сasablanca"
+                cityRu = "Касабланка"
+            }
             "snow" -> {
                 city = "Helsinki"
                 cityRu = "Хельсинки"
+            }
+            "beach" -> {
+                city = "Anapa"
+                cityRu = "Анапа"
             }
             else -> {
                 city = "Rimini"
